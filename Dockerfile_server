@@ -1,0 +1,10 @@
+FROM node:12
+WORKDIR /src-server
+RUN yarn global add ts-node bcrypt node-gyp
+COPY ./src-server/package.json .
+COPY ./src-server/yarn.lock .
+RUN yarn
+COPY ./src-server .
+RUN yarn
+EXPOSE ${PORT}
+CMD yarn start:prod

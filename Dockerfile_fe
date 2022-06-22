@@ -1,0 +1,10 @@
+FROM node:14
+WORKDIR /src-fe
+RUN yarn global add ts-node
+COPY ./src-fe/package.json .
+COPY ./src-fe/yarn.lock .
+RUN yarn
+COPY ./src-fe .
+RUN yarn
+EXPOSE ${PORT}
+CMD yarn start

@@ -1,0 +1,47 @@
+version: "3.3"
+
+volumes:
+  postgresql_data:
+
+services:
+  server:
+    container_name: server
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile_server
+    volumes:
+      - ./src-server:/src-server
+    links:
+      - postgresql
+    expose:
+      - "8080"
+    env_file: .env
+    environment:
+      - PORT=8080
+    depends_on:
+      - postgresql
+
+  fe:
+    container_name: fe
+    restart: "no"
+    build:
+      context: .
+      dockerfile: Dockerfile_fe
+    volumes:
+      - ./src-fe:/src-fe
+    expose:
+      - "3000"
+    env_file: .env
+    environment:
+      - PORT=3000
+
+  postgresql:
+    container_name: postgresql
+    restart: always
+    image: centos/postgresql-96-centos7
+    env_file: .env
+    volumes:
+      - postgresql_data:/var/lib/pgsql/data
+    expose:
+      - "5432"
