@@ -1,0 +1,25 @@
+<link rel='stylesheet' href='/stylesheets/styleError.css' />
+<div class="error_section">
+    <div class="error_contain">
+        <div>
+            <h1>Error</h1>
+        </div>
+        <div>
+            <p>{{message}}</p>
+        </div>
+        <div class="status">
+            <p>{{error.status}}</p>
+        </div>
+        <div>
+            <pre>{{error.stack}}</pre>
+        </div>
+        <div>
+            <button class="button_back" id="backHistory"><i class="fas fa-home"></i>Назад</button>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('#backHistory').addEventListener('click',function(){
+        history.back()
+    })
+</script>

@@ -1,0 +1,219 @@
+body {
+    font-family: 'proxima nova', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, rgb(5, 33, 70), rgb(1, 46, 105));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signup-header {
+    padding: 0 60px 0 60px;
+}
+
+.signup-header-div {
+    height: 100px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.signup-header p {
+    color: rgb(149, 168, 191);
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.signup-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form {
+    background-color: white;
+    border: 0px solid white;
+    border-radius: 20px;
+    height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px 0 20px 0;
+}
+
+.reg {
+    color: rgb(3, 169, 244);
+    font-weight: 400;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.short{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reg input {
+    width: 400px;
+    height: 50px;
+    border: 2px solid rgb(206, 212, 219);
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(3, 169, 244);
+    padding: 0 15px 0 15px;
+    outline: none;
+}
+
+.short input{
+    width: 200px;
+    height: 40px
+}
+
+.reg input:focus {
+    border: 2px solid rgb(3, 169, 244);
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+}
+
+.submit input {
+    background-color: rgb(218, 218, 218);
+    color: white;
+    border: 0px solid;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 400;
+    width: 400px;
+    height: 60px;
+    outline: none;
+}
+
+.submit button {
+    background-color: rgb(218, 218, 218);
+    color: white;
+    border: 0px solid;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 400;
+    width: 400px;
+    height: 60px;
+    outline: none;
+}
+
+.submit input:hover {
+    background-color: rgb(54, 211, 7);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.submit button:hover {
+    background-color: rgb(54, 211, 7);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.under-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 40px 0;
+}
+
+.first-text {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(36, 193, 12);
+}
+
+.second-text {
+    color: white;
+    font-weight: 400;
+    font-size: 45px;
+}
+
+.sing_in {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.sing_in p {
+    color: rgb(127, 139, 160);
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.sing_in button {
+    background-color: rgb(2, 41, 92);
+    border: 3px solid rgb(3, 169, 244);
+    border-radius: 55px;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 0 20px 0 20px;
+    height: 55px;
+    margin-left: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.sing_in button:hover {
+    background-color: rgb(3, 169, 244);
+    transition: .3s
+}
+
+.block{
+    display: block;
+}
+
+.hidden {
+    position: absolute;
+    opacity: 0;
+    top: -1000px;
+}
+
+.steps{
+    padding: 0 60px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-self:stretch;
+}
+.step{
+    color: rgb(206,212,219);
+    text-align: center;
+    line-height: 35px;
+}
+.active{
+    color: rgb(58,212,8);
+}
+.stepBack button{
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 35px;
+    color: rgb(206,212,219);
+}
+.stepBackButton{
+    cursor: pointer;
+}

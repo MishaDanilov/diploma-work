@@ -1,0 +1,121 @@
+{{> header}}
+<div class="container profile-container-main">
+  <div class="row">
+    <div class="col-4">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+          href="#list-home" role="tab" aria-controls="home">Мои данные</a>
+        <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+          href="#list-profile" role="tab" aria-controls="profile">Настройки</a>
+        <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+          href="#list-messages" role="tab" aria-controls="messages">Подписка</a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+          <div class="profile-container">
+            <div class="profile-content" >
+              <div class="userInfa">
+                <div>Логин</div>
+                <div id="login"></div>
+              </div>
+              <div class="userInfa">
+                <div>Имя</div>
+                <div id="name"></div>
+              </div>
+              <div class="userInfa">
+                <div>Фамилия</div>
+                <div id="surname"></div>
+              </div>
+              <div class="userInfa">
+                <div>Почта</div>
+                <div id="email"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+          <div class="profile-container">
+            <form name="FormEditUser">
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Логин</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputLogin" name="login">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Имя</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputName" name="name">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Фамилия</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputSurname" name="surname">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Почта</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail" name="email">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-success" id="submitEditUser">Применить изменения<span
+                      class="spinner-border spinner-border-sm invisible" role="status" id="spinnerEdit"
+                      aria-hidden="true"></span></button>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Пароль</label>
+                <div class="col-sm-10">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatever="@mdo">Изменить пароль</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5;" id="ToastMain"></div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить пароль</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditPassword">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Старый пароль:</label>
+            <input type="password" class="form-control" name="oldPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Новый пароль:</label>
+            <input type="password" class="form-control" name="newPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Повторить новый пароль:</label>
+            <input type="password" class="form-control" name="repeatNewPassword" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditPassword" data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditPassword">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/javascripts/profile.js"></script>

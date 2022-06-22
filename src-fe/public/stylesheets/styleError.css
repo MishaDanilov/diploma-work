@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'proxima nova', Arial, sans-serif;
+    background: linear-gradient(to top, rgba(5, 33, 70, 0.6), rgba(1, 46, 105, 0.1)), url(https://pbs.twimg.com/media/EM-0mxfWoAEUzrZ.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.error_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.error_contain {
+    color: white;
+    display: flex;
+    width: 600px;
+    text-align: center;
+    line-height: 26px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(5, 33, 70, 0.7);
+    border: 4px solid rgb(2, 23, 51);
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.error_contain h1 {
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 4px;
+}
+
+.error_contain p {
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.button_back {
+    background-color: rgb(2, 41, 92);
+    border: 3px solid rgb(3, 169, 244);
+    border-radius: 55px;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 0 20px 0 20px;
+    height: 55px;
+    margin-left: 20px;
+    cursor: pointer;
+    outline: none;
+}
+.status p{
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+.fas{
+    margin-right: 5px;
+}

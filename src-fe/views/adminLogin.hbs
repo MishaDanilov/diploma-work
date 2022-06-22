@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/stylesheets/styleLogin.css" />
+<link rel="stylesheet" href="/stylesheets/adminPanel.css" />
+<section class="bg-admin" id="sectionAdmin">
+  <header class="login-header">
+    <div class="login-header-div">
+      <p>construction<br /> company</p>
+    </div>
+    <div>
+      <a class="goToOther" href="/">Зайти за пользователя</a>
+    </div>
+  </header>
+  <div class="contain">
+    <main class="login-main">
+      <div class="under-login">
+        <div class="first-text">Административная панель</div>
+        <div class="second-text">Войдите!</div>
+      </div>
+      <div class="login-form">
+        <div>
+          <form id="loginAdminForm" action="/admin/login" method="post">
+            <div class="login">
+              <label>Логин:</label>
+              <input type="text" name="username" autofocus required />
+            </div>
+            <div class="password">
+              <label>Пароль:</label>
+              <input type="password" name="password" required />
+            </div>
+            <div class="submit">
+              <input type="submit" value="Войти" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+<script>
+  const scrollHeight = Math.max( document.body.scrollHeight,
+  document.documentElement.scrollHeight, document.body.offsetHeight,
+  document.documentElement.offsetHeight, document.body.clientHeight,
+  document.documentElement.clientHeight )
+  document.querySelector('#sectionAdmin').setAttribute('style', `height:
+  ${scrollHeight}px;`)
+</script>
+
+<script src="/javascripts/loginAdmin.js"></script>

@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(24,49,83);
+    font-family: 'proxima nova',Arial,sans-serif;
+}
+.flex-right{
+    display: flex;
+    justify-content: flex-end;
+}
+.right-place{
+    margin: 0 40px 0 0;
+}
+.Exit{
+    border: none;
+    outline: none;
+    background-color: rgb(52,58,64);
+}
+.indisplay{
+    display: none;
+}
+.profile-container-main{
+    padding-top: 40px;
+}
+.profile-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.userInfa{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-container{
+    padding: 30px;
+    border: 1px solid rgb(223,223,223);
+    border-radius: 4px;
+    background-color: white;
+}
+.card-img-top{
+    opacity: 0.5;
+}
+.application-list-container{
+    display: flex;
+    justify-content: center;
+}
+.application-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 0 15px 15px 15px;
+}
+.background-MYapplication{
+    background-color: rgb(81,94,123);
+}
+.color-card{
+    background-color: rgb(24,49,83);
+    color: rgb(255,255,255);
+}
+.list-group-item-application{
+    color: white;
+    background-color: rgb(60,78,104);
+}
+.list-group-application{
+    border-radius: 15px;
+}
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+.card-title{
+    color: rgb(255,212,59);
+    font-size: 30px;
+}
+.card-text{
+    opacity: 0.5;
+}
+.title-MYapplication{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    color: rgb(248,249,250);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.appliction-container-main{
+    padding-top: 15px;
+}
+.background-Sendapplication{
+    background-color: rgb(24,49,83);
+}
+.background-Sendapplication{
+    color: white;
+}
+.date-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.date-block p{
+    color: rgb(255,212,59);
+    margin: 0;
+    align-self:flex-end;
+}
+.background-deleted-Application{
+    background-color: rgb(34,84,137);
+    color: white;
+}
+.deleted-Application-elem{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.deleted-Application-num{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.deleted-Application-date{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.deleted-Application-content{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-warning{
+    border: none;
+    color: white;
+    background-color: rgb(32,201,151);
+}
+.background-Sendapplication-black{
+    background-color: rgb(12,24,41);
+    padding-bottom: 30px;
+}
+.home-footer{
+    color: white;
+    opacity: 1;
+}
+.table{
+    color: white;
+}
+.title-black{
+    color: rgb(99, 98, 98);
+}
+.img-home{
+    background-size: cover;
+    width: 370px;
+    height: 345px;
+}

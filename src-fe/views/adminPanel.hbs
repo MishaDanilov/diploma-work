@@ -1,0 +1,627 @@
+{{!-- <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+    aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div> --}}
+<link rel='stylesheet' href='/stylesheets/adminPanel.css' />
+<section class="bg-panel" id="sectionPanel">
+  <nav class="navbar navbar-dark bg-dark sticky-top">
+    <div class="container-fluid headerAdmin">
+      <div class="left-navigation">
+        <img src="/images/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Таблицы
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2" id="TableList">
+            <li><a class="dropdown-item active" href="#" id="clients">Клиенты</a></li>
+            <li><a class="dropdown-item" href="#" id="application">заявки на проведения работ</a></li>
+            <li><a class="dropdown-item" href="#" id="resurse">Материалы</a></li>
+            <li><a class="dropdown-item" href="#" id="infoWorks">информация о предшевствующих работах</a></li>
+            <li><a class="dropdown-item" href="#" id="infoEmployees">информация о сотрудниках</a></li>
+            <li><a class="dropdown-item" href="#" id="Administration">Администрация</a></li>
+            <li><a class="dropdown-item" href="#" id="standardsWorks">Нормы проведения работ</a></li>
+            <li><a class="dropdown-item" href="#" id="commonRules">перечень мер общего обследования</a></li>
+            <li><a class="dropdown-item" href="#" id="detailedRules">перечень необходимых мер детального
+                обследования</a></li>
+            <li><a class="dropdown-item" href="#" id="TechnicalConclusion">Техническое заключение</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          {{!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Представления
+          </button> --}}
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1" id="TableList1">
+            <li><a class="dropdown-item active" href="#" id="vwPosition">Выбирает сотрудников у которых должность “Член комисси”</a></li>
+            <li><a class="dropdown-item" href="#" id="infoMaterial">Выбрать материалы, название которых начинается с буквы «п».</a></li>
+            <li><a class="dropdown-item" href="#" id="infoProperty">Вывод клиентов с объектами , чьи заявки совпадают с номером заявки на проведения работ</a></li>
+            <li><a class="dropdown-item" href="#" id="infolateWork">Выводит информации о предшевствующих работах, вид работы которых начинается на “выявление”</a></li>
+            <li><a class="dropdown-item" href="#" id="infoDateLanding">Информации о предшевствующих работах , который были проведены с 2012 года</a></li>
+            <li><a class="dropdown-item" href="#" id="inftargetUser">Выводит клиентов у которых ID больше 10 и который оставил заявку, их объекты и цель обследования</a></li>
+            <li><a class="dropdown-item" href="#" id="infholdEx">Выводит работы, у которых руководитель был” Халимданов”</a></li>
+            <li><a class="dropdown-item" href="#" id="infaregion">Выводит расположение объектов, которые начинаются на “B”.</a></li>
+            <li><a class="dropdown-item" href="#" id="infprice">Выводит работы у которых бюджет в пределе  от 2000 до 3000</a></li>
+            <li><a class="dropdown-item" href="#" id="infa10">Список клиентов с решением ТЗ их объектов, которые начинаются на “B”</a></li>
+            <li><a class="dropdown-item" href="#" id="infa12">Вывод клиентов с их объектами и причиной обследования, которая равна утечке газа</a></li>
+            <li><a class="dropdown-item" href="#" id="infa14">Выводит материалы, цена которых в пределе от 1000 до 3000</a></li>
+            <li><a class="dropdown-item" href="#" id="infa15">Выводит сотрудников и их работы с целью и затратами</a></li>
+            <li><a class="dropdown-item" href="#" id="infa13">Выводит клиентов, у которых фамилия начинается на Д</a></li>
+            <li><a class="dropdown-item" href="#" id="infa11">Вывод клиентов с их объектами и причиной обследования</a></li>
+
+          </ul>
+        </div>
+        <div class="dropdown">
+          {{!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Курсоры
+          </button> --}}
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton3" id="TableList3">
+            <li><a class="dropdown-item active" href="#" id="countUsers">Выводит количество клиентов.</a></li>
+            <li><a class="dropdown-item" href="#" id="countResurs">Выводит количество складов.</a></li>
+            <li><a class="dropdown-item" href="#" id="countandpriceResurs">Выводит общее количество материалов и их общую стоимость.</a></li>
+            <li><a class="dropdown-item" href="#" id="updatePost" data-bs-toggle="modal" data-bs-target="#EditPostAdministretionModal" data-bs-whatever="@mdo">Обновляет должности всем сотрудникам.</a></li>
+            <li><a class="dropdown-item" href="#" id="updateTarget" data-bs-toggle="modal" data-bs-target="#EditEditTargetCheckModal" data-bs-whatever="@mdo">Обновляет цель обследования объекта</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a class="dropdown-item exitAdmin" onclick="logOutAdmin()">Выход</a>
+      </div>
+    </div>
+  </nav>
+  <table class="table table-striped">
+    <thead id="thead"></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</section>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5;" id="ToastMain"></div>
+{{!-- EditClientModal --}}
+<div class="modal fade" id="EditClientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить клиента</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditClient">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Имя</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Фамилия</label>
+            <input type="text" class="form-control" name="surname" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Почта</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Объект клиента</label>
+            <input type="text" class="form-control" name="object" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Номер технического заключения</label>
+            <input type="text" class="form-control" name="numOftex" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Статус подписки</label>
+            <p><input type="radio" value="1" class="form-check-input" name="statusSubscription" required> Активная</p>
+            <p><input type="radio" value="" class="form-check-input" name="statusSubscription" required> Не активная</p>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditClient"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditClient">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditApplicationModal --}}
+<div class="modal fade" id="EditApplicationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить заявку</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditApplication">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">цель обследования</label>
+            <input type="text" class="form-control" name="target" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">причина обследования</label>
+            <input type="text" class="form-control" name="reason" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">название объекта</label>
+            <input type="text" class="form-control" name="title" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">расположение объекта</label>
+            <input type="text" class="form-control" name="placeobject" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">контактные данные клиента</label>
+            <input type="text" class="form-control" name="contactData" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Статус заявки</label>
+            <p><input type="radio" value="1" class="form-check-input" name="statusAppliction" required> Одобрена</p>
+            <p><input type="radio" value="" class="form-check-input" name="statusAppliction" required> Не одобрена</p>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditApplication"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditApplication">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- ForecastApplicationModal --}}
+<div class="modal fade" id="ForecastApplicationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Прогноз работы:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-reflow">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Предполагаемые данные:</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Стоимость работы:</td>
+              <td id="WorkCost" style="text-align: right;"></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Время работы:</td>
+              <td id="WorkHours" style="text-align: right;"></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Необходимые материалы:</td>
+              <td id="Materials">
+                <ol class="list-group list-group-numbered" id="MaterialsList">
+                  {{!-- <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li> --}}
+                </ol>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditResurseModal --}}
+<div class="modal fade" id="EditResurseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить материалы</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditResurse">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Количество</label>
+            <input type="text" class="form-control" name="count" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">цена</label>
+            <input type="text" class="form-control" name="cost" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">потребность по лимиту</label>
+            <input type="text" class="form-control" name="need" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Документация</label>
+            <input type="text" class="form-control" name="documentation" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditResurse"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditResurse">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditInfoWorksModal --}}
+<div class="modal fade" id="EditInfoWorksModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить предшевствующие работы</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditInfoWorks">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Вид работы</label>
+            <input type="text" class="form-control" name="ViewOfWork" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">тип работы</label>
+            <input type="text" class="form-control" name="TypeOfWork" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">стоимость работы</label>
+            <input type="text" class="form-control" name="countOfWork" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">объект обседования</label>
+            <input type="text" class="form-control" name="objDev" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Фамилия руководителя</label>
+            <input type="text" class="form-control" name="surnameBoss" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditInfoWorks"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditInfoWorks">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditInfoEmployeesModal --}}
+<div class="modal fade" id="EditInfoEmployeesModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить сотрудников</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditInfoEmployees">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Сотрудники</label>
+            <input type="text" class="form-control" name="employee" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Имя сотрудника</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Фамилия сотрудника</label>
+            <input type="text" class="form-control" name="surname" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Должность сотрудника</label>
+            <input type="text" class="form-control" name="post" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditInfoEmployees"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditInfoEmployees">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditInfoAdministrationModal --}}
+<div class="modal fade" id="EditInfoAdministrationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить администраторов</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditAdministration">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Сотрудники</label>
+            <input type="text" class="form-control" name="employee" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Имя сотрудника</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Фамилия сотрудника</label>
+            <input type="text" class="form-control" name="surname" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Должность сотрудника</label>
+            <input type="text" class="form-control" name="post" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditAdministration"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditAdministration">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditStandardsWorksModal --}}
+<div class="modal fade" id="EditStandardsWorksModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить нормы проведения работ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditStandardsWorks">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">цель обследования объекта</label>
+            <input type="text" class="form-control" name="target" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">перечень ресурсов</label>
+            <input type="text" class="form-control" name="resurs" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">необходимые материалы</label>
+            <input type="text" class="form-control" name="mater" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">лимит использования материалов</label>
+            <input type="text" class="form-control" name="limit" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">затраты проведения работ</label>
+            <input type="text" class="form-control" name="expenses" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">бюджет</label>
+            <input type="text" class="form-control" name="budget" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditStandardsWorks"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditStandardsWorks">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditCommonRulesModal --}}
+<div class="modal fade" id="EditCommonRulesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить перечень мер общего обследования</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditCommonRules">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">поиск некачетвенной кладки</label>
+            <p><input type="radio" value="1" class="form-check-input" name="searchClad" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="searchClad" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">поиск трещин в бетонировании</label>
+            <p><input type="radio" value="1" class="form-check-input" name="searchTresh" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="searchTresh" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">наличие деформации фундамента</label>
+            <p><input type="radio" value="1" class="form-check-input" name="deformation" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="deformation" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">проверка документации объекта</label>
+            <p><input type="radio" value="1" class="form-check-input" name="documentation" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="documentation" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">права владения объектом</label>
+            <p><input type="radio" value="1" class="form-check-input" name="rulesOwn" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="rulesOwn" required> Нет</p>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditCommonRules"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditCommonRules">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditDetailedRulesModal --}}
+<div class="modal fade" id="EditDetailedRulesModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить перечень мер детального обследования</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditDetailedRules">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">расчёт несущей способности объекта</label>
+            <p><input type="radio" value="1" class="form-check-input" name="searchClad" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="searchClad" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">проверка прочности бетоных конструкций</label>
+            <p><input type="radio" value="1" class="form-check-input" name="searchTresh" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="searchTresh" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">оценка качества связующих устройств</label>
+            <p><input type="radio" value="1" class="form-check-input" name="deformation" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="deformation" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">оценка качества перегородок</label>
+            <p><input type="radio" value="1" class="form-check-input" name="documentation" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="documentation" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">оценка прочности подвестных сооружений</label>
+            <p><input type="radio" value="1" class="form-check-input" name="rulesOwn" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="rulesOwn" required> Нет</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label radio-form">оценка прочности креплений</label>
+            <p><input type="radio" value="1" class="form-check-input" name="marck" required> Да</p>
+            <p><input type="radio" value="" class="form-check-input" name="marck" required> Нет</p>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditDetailedRules"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditDetailedRules">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditTechnicalConclusionModal --}}
+<div class="modal fade" id="EditTechnicalConclusionModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Изменить техническое заключение</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditTechnicalConclusion">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">итоги предварительно осмотра</label>
+            <input type="text" class="form-control" name="past" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">итоги общего обследования</label>
+            <input type="text" class="form-control" name="common" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">итоги детального обследования</label>
+            <input type="text" class="form-control" name="deteil" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">повреждённые элементы объекта</label>
+            <input type="text" class="form-control" name="demage" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">необходимые меры для улучшения объекта</label>
+            <input type="text" class="form-control" name="nessary" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditTechnicalConclusion"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditTechnicalConclusion">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditPostAdministretion --}}
+<div class="modal fade" id="EditPostAdministretionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Введите должность, на которую хотите заменить.</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditPostAdministretion">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Должность</label>
+            <input type="text" class="form-control" name="post" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditPostAdministretion"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditPostAdministretion">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- EditTargetCheck --}}
+<div class="modal fade" id="EditEditTargetCheckModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Введите цель обследования, на которую хотите заменить.</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="FormEditTargetCheck">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Цель обследования</label>
+            <input type="text" class="form-control" name="target" required>
+          </div>
+          <div class="modal-footer profile-container-main" id="modalFooter">
+            <button type="button" class="btn btn-secondary" id="closeEditTargetCheck"
+              data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary" id="submitEditTargetCheck">Изменить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  )
+  document.querySelector('#sectionPanel').setAttribute('style', `height: ${scrollHeight}px;`)
+</script>
+<script src="/javascripts/admin.js"></script>
+<script src="/javascripts/adminView.js"></script>
+<script src="/javascripts/adminCursors.js"></script>

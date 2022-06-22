@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">construction company</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+            aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse dropstart flex-right" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav" >
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="spinner-border spinner-border-sm indisplay" role="status" id="spinnerHead"
+                                aria-hidden="true"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" id="showProfile" href="/home/profile">Мой профиль</a></li>
+                            <li><a class="dropdown-item" id="showApplication" href="/home/application">Мои заявки</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" onclick="LogOut()">Выход</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+        </div>
+    </div>
+</nav>
+
+<script src="/javascripts/header.js"></script>

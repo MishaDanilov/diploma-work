@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/stylesheets/styleRegistration.css" />
+<header class="signup-header">
+  <div class="signup-header-div">
+    <p>construction<br /> company</p>
+  </div>
+</header>
+<div class="contain">
+  <main class="signup-main">
+    <div class="under-signup">
+      <div class="first-text">Создать аккаунт</div>
+      <div class="second-text">Почти готово!</div>
+    </div>
+    <div class="signup-form">
+      <div class="steps">
+        <div class="stepBack"><button
+            onclick="stepBack()"
+            id="stepBackButton"
+            class="stepBackButton"
+          ><i class="far fa-arrow-alt-circle-left"></i></button></div>
+        <div class="step active" id="step1"><i
+            class="fas fa-circle block"
+          ></i>ШАГ 1</div>
+        <div class="step" id="step2"><i class="fas fa-circle block"></i>ШАГ 2</div>
+        <div class="step" id="step3"><i class="fas fa-circle block"></i>ШАГ 3</div>
+      </div>
+      <div>
+        <form id="registrationForm" action="/registration" method="post">
+          <div class="reg" id="email">
+            <label>Почта:</label>
+            <input type="email" name="email" autofocus required />
+          </div>
+          <div class="reg hidden short" id="username">
+            <label>Логин:</label>
+            <input type="text" name="username" required />
+          </div>
+          <div class="reg hidden short" id="name">
+            <label>Имя:</label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="reg hidden short" id="surname">
+            <label>Фамилия:</label>
+            <input type="text" name="surname" required />
+          </div>
+          <div class="reg hidden" id="password">
+            <label>Пароль:</label>
+            <input type="password" name="password" required />
+          </div>
+          <div class="submit hidden" id="create"><button
+              type="submit"
+              value="Создать аккаунт"
+            ></button></div>
+        </form>
+        <div class="submit" id="next"><button
+            onclick="nextStep()"
+            id="nextButton"
+          >Далее</button></div>
+      </div>
+    </div>
+  </main>
+  <div class="sing_in">
+    <p>Уже есть аккаунт?</p>
+    <form action="/" method="GET" id="signip"><button
+        form="signip"
+        class="create"
+      ><i class="fas fa-door-open"></i>
+        ВОЙТИ</button></form>
+  </div>
+</div>
+<script src="/javascripts/registration.js"></script>

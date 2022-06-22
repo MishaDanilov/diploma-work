@@ -1,0 +1,96 @@
+{{> header}}
+
+{{!-- <div class="container profile-container-main">
+    <table class="table table-bordered" id="tableApplication">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</div> --}}
+
+<div class="background-MYapplication">
+    <div class="background-Sendapplication">
+        <h1 class="title-MYapplication">Мои заявки</h1>
+    </div>
+    <div class="container appliction-container-main">
+        <div class="application-list-container" id="applictionContainer">
+            <div class="application-list" id="applicationList"></div>
+        </div>
+
+    </div>
+</div>
+<div class="background-deleted-Application">
+    <div class="container">
+        <ul class="deleted-Application" id="deletedApplication"></ul>
+    </div>
+    
+</div>
+<div class="background-Sendapplication">
+    <h1 class="title-MYapplication">Оставить заявку</h1>
+    <div class="container appliction-container-main">
+        <form name="FormAddApplication" class="row g-3" action="#" method="#">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Цель обследования</label>
+                <input type="text" class="form-control" name="target" required>
+            </div>
+            <div class="col-md-6">
+                <label for="disabledSelect" class="form-label">Вы можете выбрать цель обследования из списка</label>
+                <select class="form-select" aria-label="Default select example" name="targetSelect" id="selectTargetMenu">
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Причина обследования</label>
+                <input type="text" class="form-control" name="reason" required>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Название объекта</label>
+                <input type="text" class="form-control" name="title"
+                    placeholder="ОАО «Мозырский нефтеперерабатывающий завод»" required>
+            </div>
+            <div class="col-2">
+                <label for="inputAddress" class="form-label">Площадь объекта (м²)</label>
+                <input type="text" class="form-control" name="area">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Адрес объекта</label>
+                <input type="text" class="form-control" name="adres" placeholder="ZHukovskogo Ul., bld. 10/1, appt. 64"
+                    required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">Почта</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary" id="submitaddApplication">
+            </div>
+        </form>
+
+    </div>
+</div>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5;" id="ToastMain"></div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Подтвердите действие</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeCrosse"></button>
+      </div>
+      <div class="modal-body">
+        Вы действительно хотите удалить заявку?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeButton">Нет</button>
+        <button type="button" class="btn btn-primary" id="acsesButton">Да</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/javascripts/application.js"></script>

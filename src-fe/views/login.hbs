@@ -1,0 +1,40 @@
+<link rel='stylesheet' href='/stylesheets/styleLogin.css' />
+<header class="login-header">
+    <div class="login-header-div">
+        <p>construction<br> company</p>
+    </div>
+    <div>
+        <a class="goToOther" href="/admin">Зайти за админа</a>
+    </div>
+</header>
+<div class="contain">
+    <main class="login-main">
+        <div class="under-login">
+            <div class="first-text">Авторизация</div>
+            <div class="second-text">Войдите!</div>
+        </div>
+        <div class="login-form">
+            <div>
+                <form id="loginForm" action="/login" method="post">
+                    <div class="login">
+                        <label>Логин:</label>
+                        <input type="text" name="username" autofocus required>
+                    </div>
+                    <div class="password">
+                        <label>Пароль:</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Войти">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div class="sing_up">
+        <p>Нет учетной записи?</p>
+        <form action="/registration" method="GET" id="signUp"><button form="signUp" class="create"><i
+                    class="fas fa-wallet"></i> СОЗДАТЬ</button></form>
+    </div>
+</div>
+<script src="/javascripts/login.js"></script>

@@ -1,0 +1,354 @@
+{{!-- 
+<link href="stylesheets/homeCSS/bootstrap.min.css" rel="stylesheet"> --}}
+<link href="stylesheets/homeCSS/bootstrap-theme.min.css" rel="stylesheet">
+
+<link href="stylesheets/homeCSS/owl.carousel.css" rel="stylesheet">
+<link href="stylesheets/homeCSS/owl.theme.default.min.css" rel="stylesheet">
+
+<link href="stylesheets/homeCSS/magnific-popup.css" rel="stylesheet">
+
+<link href="stylesheets/homeCSS/style.css" rel="stylesheet">
+<div class="main">
+    <header class="bg-img header">
+        {{> header}}
+        <div class="container">
+            <div class="row">
+                <div class="intro-box">
+                    <div class="intro">
+                        <h1>Строительная компания</h1>
+                        <p>обследование зданий и сооружений</p>
+                        <a class="btn vira-btn" href="#sendApplicationHome">Оставить заявку</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-sm-offset-2">
+                    <h2 class="title title-black">О компании</h2>
+                    <p>
+                        Мы занимаемся обследованием строительных конструкций зданий и сооружений.
+                        Основной задачей обследования является разработка рекомендаций и технических решений по
+                        восстановлению утраченных эксплуатационных качеств элементов здания
+                    </p>
+                    <img src="images/signature.png">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="purpose section">
+        <div class="container">
+            <h2 class="title">Чем мы занимаемся</h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="vira-card">
+                        <div class="vira-card-header">
+                            <div class="card-icon">
+                                <span class="fa fa-diamond" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="vira-card-content">
+                            <h3>Обследование объекта</h3>
+                            <p>
+                                Предварительный осмотр здания. Общее обследование. Детальное обследование
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="vira-card">
+                        <div class="vira-card-header">
+                            <div class="card-icon">
+                                <span class="fa fa-cogs" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="vira-card-content">
+                            <h3>Техническое заключение</h3>
+                            <p>
+                                Результаты всех осмотров оформляют актами по формам согласно правилам, подробные данные
+                                заносят в журнал технического заключения
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="vira-card">
+                        <div class="vira-card-header">
+                            <div class="card-icon">
+                                <span class="fa fa-bicycle" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="vira-card-content">
+                            <h3>Годовой осмотр</h3>
+                            <p>
+                                Подписка на годовой осмотр и обслуживания объекта. Возможность подписаться на годовой
+                                осмотр и обслуживания объекта даёт гарантию своевременного обнаружения и исправления
+                                проблем на объекте.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="expertise" class="expert">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 bg-img">
+                    <div></div>
+                </div>
+                <div class="col-sm-5 section">
+                    <h2 class="title title-black">Ответственные сотрудники</h2>
+                    <div id="expert-slider" class="owl-carousel">
+                        <div class="item">
+                            <p>
+                                По обследованию зданий и сооружений работают высоко квалифицированные специалисты,
+                                аттестованные в соответствующем порядке в «БелСтройЦентре».
+                                Количество аттестованных специалистов 5 человек. Данные специалисты являются штатными
+                                сотрудниками БРУ строительного факультета, кафедра промышленное и гражданское
+                                строительство.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>
+                                В процессе технической эксплуатации здания должны соответствовать требованиям,
+                                обеспечивающим безопасность для жизни и здоровья граждан, сохранность их имущества,
+                                имущества собственника здания, экологическую безопасность в течение всего периода
+                                использования объектов строительства по назначению.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="vira-quote section bg-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <img class="quote" src="/images/quote.png">
+                    <p>
+                        Мы сделаем всё, чтобы найти все возможные причины разрушения вашего здания.
+                    </p>
+                    <img src="/images/mouse.png">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="workstation" class="work section">
+        <div class="container">
+            <h2 class="title">Наши работы</h2>
+            <table class="table ">
+                <thead id="theadWorkstation" class="table-light"></thead>
+                <tbody id="tbodyWorkstation"></tbody>
+            </table>
+        </div>
+    </section>
+</div>
+<section class="watch bg-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Посмотрите видео</span>
+                <a class="popup-youtube btn" href="https://www.youtube.com/watch?v=gYG7UI_RKAk"><span
+                        class="fa fa-play"></span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="team section">
+    <div class="container">
+        <h2 class="title">Наши сотрудники</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <img class="img-responsive" src="/images/8.jpg">
+                    </div>
+                    <div class="vira-card-content">
+                        <h3 class="employee-color-white employee_name" id="employee_name0"></h3>
+                        <p class="employee-color-white" id="employee_post0"></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <img class="img-responsive " src="https://i.ibb.co/LYyCySn/Men-photosession8.jpg" >
+                    </div>
+                    <div class="vira-card-content">
+                        <h3 class="employee-color-white employee_name" id="employee_name1"></h3>
+                        <p class="employee-color-white" id="employee_post1"></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <img class="img-responsive " src="https://i.ibb.co/nRRVZFC/Agents-1024x680.jpg">
+                    </div>
+                    <div class="vira-card-content">
+                        <h3 class="employee-color-white employee_name" id="employee_name2"></h3>
+                        <p class="employee-color-white" id="employee_post2"></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <img class="img-responsive" src="/images/10.jpg">
+                    </div>
+                    <div class="vira-card-content">
+                        <h3 class="employee-color-white employee_name" id="employee_name3"></h3>
+                        <p class="employee-color-white" id="employee_post3"></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <img class="img-responsive" src="https://i.ibb.co/6mZGWzn/000021932113.jpg">
+                    </div>
+                    <div class="vira-card-content">
+                        <h3 class="employee-color-white employee_name" id="employee_name4"></h3>
+                        <p class="employee-color-white" id="employee_post4"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="subscribe section bg-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p>Подпишитесь на уведомления</p>
+                <form class="form-inline">
+
+                    <button type="submit" class="btn vira-btn" id="subscribeHome">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="contact section">
+    <div class="container">
+        <h2 class="title">Свяжитесь с нами</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <span class="fa fa-map-o" aria-hidden="true"></span>
+                    </div>
+                    <div class="vira-card-content">
+                        <h3>Адрес</h3>
+                        <p>
+                            Level 5, 25 pitt st, US
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <span class="fa fa-phone" aria-hidden="true"></span>
+                    </div>
+                    <div class="vira-card-content">
+                        <h3>Телефон</h3>
+                        <p>
+                            +555 211 3747
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="vira-card">
+                    <div class="vira-card-header">
+                        <span class="fa fa-paper-plane" aria-hidden="true"></span>
+                    </div>
+                    <div class="vira-card-content">
+                        <h3>Почта</h3>
+                        <p>
+                            hey@themewagon.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="social-icons">
+                    <ul>
+                        <a href="#">
+                            <li><span class="ion-social-facebook"></span></li>
+                        </a>
+                        <a href="#">
+                            <li><span class="ion-social-twitter"></span></li>
+                        </a>
+                        <a href="#">
+                            <li><span class="ion-social-pinterest"></span></li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="background-Sendapplication-black">
+    <h1 class="title-MYapplication">Оставить заявку</h1>
+    <div class="container appliction-container-main">
+        <form name="FormAddApplication" class="row g-3" action="#" method="#">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label home-footer">Цель обследования</label>
+                <input type="text" class="form-control" name="target" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label home-footer">Причина обследования</label>
+                <input type="text" class="form-control" name="reason" required>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label home-footer">Название объекта</label>
+                <input type="text" class="form-control" name="title"
+                    placeholder="ОАО «Мозырский нефтеперерабатывающий завод»" required>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label home-footer">Адрес объекта</label>
+                <input type="text" class="form-control" name="adres" placeholder="ZHukovskogo Ul., bld. 10/1, appt. 64"
+                    required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label home-footer">Почта</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                    <label class="form-check-label home-footer" for="gridCheck ">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="col-12" id="sendApplicationHome">
+                <input type="submit" class="btn btn-primary" id="submitaddApplication">
+            </div>
+        </form>
+
+    </div>
+</div>
+</div>
+<script src="/javascripts/home.js"></script>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5;" id="ToastMain"></div>
+<script src="/javascripts/homeJS/jquery-3.1.1.js"></script>
+<script src="/javascripts/homeJS/bootstrap.min.js"></script>
+<script src="/javascripts/homeJS/owl.carousel.min.js"></script>
+{{!--
+<script src="https://use.fontawesome.com/55b73bf748.js"></script> --}}
+<script src="/javascripts/homeJS/jquery.magnific-popup.js"></script>
+<script src="/javascripts/homeJS/script.js"></script>
